@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DesafioFinal.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<h1>Categorias</h1>
+
+<p>
+    <a asp-action="Create">Criar nova categoria</a>
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="card-group mb-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titulo)</h5>
+                <br/>
+                <a asp-action="CategoriaArtigo" asp-route-id="@item.Id" class="btn btn-primary">Ver artigos</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </div>
+        </div>
+    </div>
+}

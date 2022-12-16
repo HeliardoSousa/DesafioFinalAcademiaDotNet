@@ -1,0 +1,25 @@
+﻿@model DesafioFinal.Models.Categoria
+
+@{
+    ViewData["Title"] = "Detalhes categoria";
+}
+
+<h1>Detalhes da categoria</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+    <br />
+    <br />
+    <a asp-action="Index">Voltar as categorias</a>
+</div>

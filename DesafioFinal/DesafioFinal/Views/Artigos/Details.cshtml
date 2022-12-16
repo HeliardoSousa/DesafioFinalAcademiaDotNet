@@ -1,0 +1,33 @@
+﻿@model DesafioFinal.Models.Artigo
+
+@{
+    ViewData["Title"] = "Artigo";
+}
+
+<h1>Artigo: @Html.DisplayFor(model => model.Titulo) </h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.IdCategoriaNavigation.Titulo)</h4>
+    <hr />
+    <dl class="row">
+       
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Corpo)
+        </dt>*@
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Corpo)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCategoriaNavigation.Titulo)
+        </dd>*@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+    <br/>
+    <br/>
+    <a asp-action="Index">Voltar aos artigos</a>
+</div>

@@ -1,0 +1,40 @@
+﻿@model DesafioFinal.Models.Artigo
+
+@{
+    ViewData["Title"] = "Deletando artigo";
+}
+
+<h1>Deletando artigo</h1>
+
+<h3>Deseja realmente deletar esse artigo?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Corpo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Corpo)
+        </dd>
+        <dt class = "col-sm-2">
+            <label>Categoria</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCategoriaNavigation.Titulo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <br />
+        <br />
+        <a asp-action="Index">Voltar para os artigos</a>
+    </form>
+</div>
